@@ -1,0 +1,52 @@
+Centos 7 - dhcpd
+=========================
+Based on Fedora dockerfile for dhcpd - DHCP server, on Docker 1.3.0.
+Modified to usec Centos 7.0
+Changed the startup procedure 
+Added support scripts for different stages
+
+Initialization
+--------------
+The Config file has the name of the Repo and the name of Docker container.  
+
+Build
+-----
+To build the image run: ./admin.sh -b
+
+Run
+---
+To start the container do: ./admin.sh -r
+
+Status
+------
+To see logs, net status, process running do: ./admin.sh -i
+
+Logs
+----
+To see logs, net status, process running do: ./admin.sh -l
+
+Attach a shell
+--------------
+To run a shell inside the container do: ./admin.sh -s
+
+Stop
+----
+To stop this container do: ./admin.sh --stop
+
+Start
+------
+To start a stoped contaier do: ./admin.sh --start
+
+Remove container 
+---------------
+To remove the container: ./admin --rmc
+
+Remove image
+------------ 
+To remove the image: ./admin  --rmi
+
+Test DHPD functionality
+----------------------
+dig @127.0.0.1 -xx falcon0.levyx.local
+dig @10.0.0.8  levyx.local axfr
+ss -anutp
