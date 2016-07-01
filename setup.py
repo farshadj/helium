@@ -5,7 +5,7 @@ from distutils.extension import Extension
 # define the extension module
 helium = Extension('helium', 
 	sources=['helium.c'],
-	 include_dirs=['/usr/include/'],
+	 include_dirs=['/usr/include/'], #change this if your environment is different
 	extra_link_args=['-lhe','-lpthread'],
 	extra_compile_args=['-lhe','-lpthread']
 )
